@@ -109,6 +109,11 @@ class Wp_Cpt_Plugin_Admin {
 		*/
 
 		public static function new_cpt () {
+
+		$plural 	= 'Custom Post Types';
+		$single 	= 'Custom Post Type';
+		
+
 	$labels = array(
 		'name'               => _x( 'Custom Post Types', 'post type general name', 'your-plugin-textdomain' ),
 		'singular_name'      => _x( 'Custom Post Type', 'post type singular name', 'your-plugin-textdomain' ),
@@ -134,8 +139,8 @@ class Wp_Cpt_Plugin_Admin {
 		'show_ui'              => true,    // Whether to generate and allow a UI for managing this post type in the admin.
 		'show_in_menu'         => true,    // Whether to show this post type in admin menu. 
 		'show_in_admin_bar'    => true,    // Whether to make this post available via adminn bar.
-		'query_var'            => true,
-		'rewrite'              => array( 'slug' => 'book' ),
+		'query_var'            => true,    // Triggers the handling of rewrites for this post type.
+		'rewrite'              => true,	   // Sets the query_var key for this post type. 
 		'capability_type'      => 'post',  // The string to use to build the read, edit, and delete capabilities.
 		'has_archive'          => true,    // Whether there should be post type archives, or if a string, the archive slug to use.
 		'hierarchical'         => false,   // Whether the post type is hierarchical (e.g. page).
@@ -146,7 +151,7 @@ class Wp_Cpt_Plugin_Admin {
 		'delete_with_user'     => null,    // Whether to delete posts of this type when deleting a user. If true, posts of this type belonging to the user will be moved to trash when then user is deleted. If false, posts of this type belonging to the user will *not* be trashed or deleted. 
 	);
 
-	register_post_type( 'book', $args ); // registers the post type.
+	register_post_type( 'new_cpt', $args ); // registers the post type.
 }
 
 }
