@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       WP CPT Plugin
  * Plugin URI:        www.github.com/mrahmadbilal
- * Description:       This is a WordPress Cutom Post Type Plugin boilerplate. It makes creating custom post types very easy and saves a lot of time. It is also properly documented to make it easier for you to customize it as per your needs.
+ * Description:       This is a WordPress Custom Post Type Plugin boilerplate. It makes creating custom post types very easy and saves a lot of time. It is also properly documented to make it easier for you to customize it as per your needs.
  * Version:           1.0.0
  * Author:            Ahmad Bilal
  * Author URI:        www.github.com/mrahmadbilal
