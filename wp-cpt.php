@@ -1,118 +1,49 @@
 <?php
 
 /**
- * The admin-specific functionality of the plugin.
+ * 
  *
- * @link       www.github.com/mrahmadbilal
- * @since      1.0.0
+ * @link              www.github.com/mrahmadbilal
+ * @since             1.0.0
+ * @package           Wp_Cpt
  *
- * @package    Wp_Cpt_Plugin
- * @subpackage Wp_Cpt_Plugin/admin
+ * @wordpress-plugin
+ * Plugin Name:       WP CPT Plugin.
+ * Plugin URI:        www.github.com/mrahmadbilal
+ * Description:       This is a WordPress Custom Post Type Plugin boilerplate. It makes creating custom post types very easy and saves a lot of time. It is also properly documented to make it easier for you to customize it as per your needs.
+ * Version:           1.0.0
+ * Author:            Ahmad Bilal
+ * Author URI:        www.github.com/mrahmadbilal
+ * License:           GPL-2.0+
+ * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * Text Domain:       wp-cpt-plugin
+ * Domain Path:       /languages
  */
+
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
+define( 'PLUGIN_NAME_VERSION', '1.0.0' );
 
 /**
- * The admin-specific functionality of the plugin.
- *
- * Defines the plugin name, version, and two examples hooks for how to
- * enqueue the admin-specific stylesheet and JavaScript.
- *
- * @package    Wp_Cpt_Plugin
- * @subpackage Wp_Cpt_Plugin/admin
- * @author     Ahmad Bilal <atbilal@gmail.com>
- */
-class Wp_Cpt_Plugin_Admin {
+		* Registers the Custom Post Type hook.
+		*
+		* @since 1.0.0
+		* @uses add_action()
+		*/
 
-	/**
-	 * The ID of this plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $plugin_name    The ID of this plugin.
-	 */
-	private $plugin_name;
+add_action( 'init' ,'wp_new_cpt');
 
-	/**
-	 * The version of this plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $version    The current version of this plugin.
-	 */
-	private $version;
-
-	/**
-	 * Initialize the class and set its properties.
-	 *
-	 * @since    1.0.0
-	 * @param      string    $plugin_name       The name of this plugin.
-	 * @param      string    $version    The version of this plugin.
-	 */
-	public function __construct( $plugin_name, $version ) {
-
-		$this->plugin_name = $plugin_name;
-		$this->version = $version;
-
-	}
-
-	/**
-	 * Register the stylesheets for the admin area.
-	 *
-	 * @since    1.0.0
-	 */
-	public function enqueue_styles() {
-
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Wp_Cpt_Plugin_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Wp_Cpt_Plugin_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/wp-cpt-plugin-admin.css', array(), $this->version, 'all' );
-
-	}
-
-	/**
-	 * Register the JavaScript for the admin area.
-	 *
-	 * @since    1.0.0
-	 */
-	public function enqueue_scripts() {
-
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Wp_Cpt_Plugin_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Wp_Cpt_Plugin_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/wp-cpt-plugin-admin.js', array( 'jquery' ), $this->version, false );
-
-	}
-
-		/**
+/**
 		* Creates a new custom post type()
 		*
 		* @since 1.0.0
-		* @access public
 		* @uses register_post_type()
 		*/
 
-		public static function new_cpt () {
-
-		$plural 	= 'Custom Post Types';
-		$single 	= 'Custom Post Type';
-		
+function wp_new_cpt() {
 
 	$labels = array(
 		'name'               => _x( 'Custom Post Types', 'post type general name', 'your-plugin-textdomain' ),
@@ -140,7 +71,7 @@ class Wp_Cpt_Plugin_Admin {
 		'show_in_menu'         => true,    // Whether to show this post type in admin menu. 
 		'show_in_admin_bar'    => true,    // Whether to make this post available via adminn bar.
 		'query_var'            => true,    // Triggers the handling of rewrites for this post type.
-		'rewrite'              => true,	   // Sets the query_var key for this post type. 
+		'rewrite'              => true,	   // Sets the query_var key for this post type.
 		'capability_type'      => 'post',  // The string to use to build the read, edit, and delete capabilities.
 		'has_archive'          => true,    // Whether there should be post type archives, or if a string, the archive slug to use.
 		'hierarchical'         => false,   // Whether the post type is hierarchical (e.g. page).
@@ -151,7 +82,30 @@ class Wp_Cpt_Plugin_Admin {
 		'delete_with_user'     => null,    // Whether to delete posts of this type when deleting a user. If true, posts of this type belonging to the user will be moved to trash when then user is deleted. If false, posts of this type belonging to the user will *not* be trashed or deleted. 
 	);
 
-	register_post_type( 'new_cpt', $args ); // registers the post type.
+	register_post_type( 'wp_new_cpt', $args ); // registers the post type.
 }
 
+
+/**
+ * The code that runs during plugin activation.
+ * Uses activaiton hook.
+ */
+
+function wp_cpt_activation() {
+ 
+  	// Write the activation code here.
 }
+
+register_activation_hook( __FILE__ , 'wp_cpt_activation');
+
+/**
+ * The code that runs during plugin deactivation.
+ * Uses deactivaiton hook.
+ */
+
+function wp_cpt_deactivation() {
+ 
+  	// Write the deactivation code here.
+}
+
+register_deactivation_hook( __FILE__ , 'wp_cpt_deactivation');
