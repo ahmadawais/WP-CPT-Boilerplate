@@ -25,7 +25,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define( 'PLUGIN_NAME_VERSION', '1.0.0' );
+define( 'WP_CPT_VERSION', '1.0.0' );
 
 /**
 		* Registers the Custom Post Type hook.
