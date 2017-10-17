@@ -1,24 +1,19 @@
 <?php
 
 /**
- * 
- *
- * @link              www.github.com/mrahmadbilal
- * @since             1.0.0
- * @package           Wp_Cpt
- *
- * @wordpress-plugin
- * Plugin Name:       WP CPT Plugin.
- * Plugin URI:        www.github.com/mrahmadbilal
- * Description:       This is a WordPress Custom Post Type Plugin boilerplate. It makes creating custom post types very easy and saves a lot of time. It is also properly documented to make it easier for you to customize it as per your needs.
- * Version:           1.0.0
- * Author:            Ahmad Bilal
- * Author URI:        www.github.com/mrahmadbilal
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       wp-cpt-plugin
- * Domain Path:       /languages
- */
+* @link              https://github.com/mrahmadbilal
+* @since             1.0.0
+* @package           WP_Cpt
+* @wordpress-plugin
+* Plugin Name:       WP CPT Plugin.
+* Plugin URI:        https://github.com/mrahmadbilal/WP-CPT-Boilerplate
+* Description:       This is a WordPress Custom Post Type Plugin boilerplate. It makes creating custom post types very easy and saves a lot of time. It is also properly documented to make it easier for you to customize it as per your needs.
+* Version:           1.0.0
+* Author:            mrahmadbilal
+* Author URI:        https://github.com/mrahmadbilal
+* License:           GPL-2.0+
+* License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+*/
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
@@ -28,20 +23,18 @@ if ( ! defined( 'WPINC' ) ) {
 define( 'WP_CPT_VERSION', '1.0.0' );
 
 /**
-		* Registers the Custom Post Type hook.
-		*
-		* @since 1.0.0
-		* @uses add_action()
-		*/
+* Registers the Custom Post Type hook.
+* @since 1.0.0
+* @uses add_action()
+*/
 
 add_action( 'init' ,'wp_new_cpt');
 
 /**
-		* Creates a new custom post type()
-		*
-		* @since 1.0.0
-		* @uses register_post_type()
-		*/
+* Creates a new custom post type()
+* @since 1.0.0
+* @uses register_post_type()
+*/
 
 function wp_new_cpt() {
 
@@ -87,9 +80,9 @@ function wp_new_cpt() {
 
 
 /**
- * The code that runs during plugin activation.
- * Uses activaiton hook.
- */
+* The code that runs during plugin activation.
+* Uses activaiton hook.
+*/
 
 function wp_cpt_activation() {
  
@@ -99,9 +92,9 @@ function wp_cpt_activation() {
 register_activation_hook( __FILE__ , 'wp_cpt_activation');
 
 /**
- * The code that runs during plugin deactivation.
- * Uses deactivaiton hook.
- */
+* The code that runs during plugin deactivation.
+* Uses deactivaiton hook.
+*/
 
 function wp_cpt_deactivation() {
  
