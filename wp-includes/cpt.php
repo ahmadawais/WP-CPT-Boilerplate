@@ -1,6 +1,14 @@
 <?php
 
 /**
+* Registers the Custom Post Type hook.
+* @since 1.0.0
+* @uses add_action()
+*/
+
+add_action( 'init' ,'wp_new_cpt');
+
+/**
 * Creates a new custom post type()
 * @since 1.0.0
 * @uses register_post_type()
