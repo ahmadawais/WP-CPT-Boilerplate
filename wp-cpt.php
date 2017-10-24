@@ -28,28 +28,4 @@ define( 'WP_CPT_VERSION', '1.0.0' );
 * @uses require_once()
 */
 
-require_once(dirname(__FILE__).'/wp-includes/cpt.php');
-
-/**
-* The code that runs during plugin activation.
-* Uses activaiton hook.
-*/
-
-function wp_cpt_activation() {
- 
-  	// Write the activation code here.
-}
-
-register_activation_hook( __FILE__ , 'wp_cpt_activation');
-
-/**
-* The code that runs during plugin deactivation.
-* Uses deactivaiton hook.
-*/
-
-function wp_cpt_deactivation() {
- 
-  	// Write the deactivation code here.
-}
-
-register_deactivation_hook( __FILE__ , 'wp_cpt_deactivation');
+require_once(dirname(__FILE__).'/inc/cpt.php');
