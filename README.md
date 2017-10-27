@@ -1,6 +1,6 @@
 # WordPress Custom Post Type Plugin Boilerplate.
 
-This is a WordPress Custom Post Type Plugin boilerplate. It makes creating custom post types easy and saves a lot of time. It is also properly documented to make it convenient for you to customize it as per your needs.
+It is a WordPress Custom Post Type Plugin boilerplate. It makes creating custom post types easy and saves a lot of time. It is also properly documented to make it convenient for you to customize it as per your needs.
 
 ## Contents
 The WordPress Custom Post Type boilerplate consists of the following  files.
