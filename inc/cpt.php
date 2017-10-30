@@ -1,18 +1,18 @@
 <?php
 
 /**
-* Registers the Custom Post Type hook.
-* @since 1.0.0
-* @uses add_action()
-*/
+ * Registers the Custom Post Type hook.
+ * @since 1.0.0
+ * @uses add_action()
+ */
 
 add_action( 'init' ,'wp_new_cpt');
 
 /**
-* Creates a new custom post type()
-* @since 1.0.0
-* @uses register_post_type()
-*/
+ * Creates a new custom post type()
+ * @since 1.0.0
+ * @uses register_post_type()
+ */
 
 function wp_new_cpt() {
 
@@ -53,5 +53,5 @@ function wp_new_cpt() {
 		'delete_with_user'     => null,    // Whether to delete posts of this type when deleting a user. If true, posts of this type belonging to the user will be moved to trash when then user is deleted. If false, posts of this type belonging to the user will *not* be trashed or deleted. 
 	);
 
-	register_post_type( 'wp_new_cpt', $args ); // registers the post type.
+	register_post_type( 'wp_new_cpt', $args ); // Registers the post type.
 }
