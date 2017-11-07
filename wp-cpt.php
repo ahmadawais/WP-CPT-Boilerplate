@@ -28,4 +28,4 @@ define( 'WP_CPT_VERSION', '1.0.0' );
  * @uses require_once()
  */
 
-require_once(dirname(__FILE__).'/inc/cpt.php');
+require_once( dirname( __FILE__ ) . '/inc/cpt.php' );
